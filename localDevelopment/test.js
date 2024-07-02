@@ -15,6 +15,7 @@ const { APIException } = require('@zohocrm/nodejs-sdk-2.0/core/com/zoho/crm/api/
 const RecordField = require('@zohocrm/nodejs-sdk-2.0/core/com/zoho/crm/api/record/field').Field
 const { UsersOperations, GetUsersParam } = require('@zohocrm/nodejs-sdk-2.0/core/com/zoho/crm/api/users/users_operations')
 const ResponseWrapper = require('@zohocrm/nodejs-sdk-2.0/core/com/zoho/crm/api/users/response_wrapper').ResponseWrapper
+const $vars = require('./variables').vars
 const businessHours = {
     days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
     timeOffset: '-07:00',
@@ -31,23 +32,6 @@ const businessHours = {
     },
     intervalMinutes: 30
 }
-
-// const ZOHO_API_USER_EMAIL = 'v.samardak2017@gmail.com'
-const $vars = {
-    ZOHO_API_USER_EMAIL: 'kotov.test.master@gmail.com',
-    ZOHO_API_CLIENT_ID: '1000.BYVBQR4BYXXHXY1QQOIFEH3P0ET8CR',
-    ZOHO_API_CLIENT_SECRET: 'e2bcc8821d867c607c60a67ce69edab55dc9e69629',
-    ZOHO_API_CLIENT_REFRESH_TOKEN: '1000.61b3fa6a85c3f84a87b9e59a65d5c52c.6f503eef5eff3254451e3945a3772ec9',
-    ZOHO_API_CLIENT_TOKEN_PATH: 'C:/Work/FlowiseLocalDev/tmp/nodejs_sdk_tokens.1000.BYVBQR4BYXXHXY1QQOIFEH3P0ET8CR.txt'
-}
-
-let accessToken = null
-
-// const ZOHO_API_USER_EMAIL = 'm.rudnev@solutionmentors.org'
-// const ZOHO_API_CLIENT_ID = '1000.6WT2Z55D4DYIX9WS3Z3C4XM08V3CWB'
-// const ZOHO_API_CLIENT_SECRET = '465cdd5ddef07ad70c09ad58dc8116d865e3e92e6a'
-// const ZOHO_API_CLIENT_REFRESH_TOKEN = '1000.cea7a9d3967156a9b8b1aac5e8dffb1e.914a07bc95d60daebc7bcdcaec94e7dd'
-// const ZOHO_API_CLIENT_TOKEN_PATH = 'C:/Work/Flowise/tmp/nodejs_sdk_tokens.1000.6WT2Z55D4DYIX9WS3Z3C4XM08V3CWB.txt'
 
 async function initialize() {
     let user = new UserSignature($vars.ZOHO_API_USER_EMAIL)
