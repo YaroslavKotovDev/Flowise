@@ -60,7 +60,6 @@
 .history/
 
 ## other keys
-localDevelopment/variables.js
 *.key
 *.keys
 *.priv
